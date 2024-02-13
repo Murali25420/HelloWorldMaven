@@ -1,15 +1,30 @@
 pipeline { 
     agent any 
     stages {
-        stage('Install') { 
+        stage('SCM') { 
             steps {
-               sh "mvn install "
+               git 'https://github.com/Murali25420/HelloWorldMaven.git'
                 }
             }
-            stage('Test'){
+            stage('Install'){
             steps {
-                 sh "mvn test"
+                 sh "mvn Install"
 	    }
 	    }
+	      stage('Compile'){
+            steps {
+                 sh "mvn Compile"
+	    }
+	      }
+   stage('Test'){
+            steps {
+                 sh "mvn Test"
+	    }
+   }
+	       stage('Package'){
+            steps {
+                 sh "mvn Package"
+	    }
+	       }
     }
 }
