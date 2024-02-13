@@ -6,24 +6,24 @@ pipeline {
                git 'https://github.com/Murali25420/HelloWorldMaven.git'
                 }
             }
-            stage('Install'){
+            stage('install'){
             steps {
-                 sh "mvn Install"
+                 sh "mvn install"
 	    }
 	    }
-	      stage('Compile'){
+	      stage('compile'){
             steps {
-                 sh "mvn Compile"
+                 sh "mvn compile"
 	    }
 	      }
-   stage('Test'){
+   stage('test'){
             steps {
-                 sh "mvn Test"
+                 sh "mvn test"
 	    }
    }
-	       stage('Package'){
+	       stage('package'){
             steps {
-                 sh "mvn Package"
+                 sh "mvn package"
 	    }
 	       }
     }
